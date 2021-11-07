@@ -1,0 +1,18 @@
+table {
+  background-color: lightgrey;
+  border: 5px solid black;
+  box-shadow: 1px lightgrey;
+  border-radius: 20px;
+  width: 500px;
+  height: 400px;
+  padding: 30px;
+  margin-left: 350px;
+  margin-top: 80px;
+  margin-bottom: 100px;
+}
+#save1 {
+  align-self: center;
+  height: 30px;
+  justify-content: center;
+  align-content: center;
+}
