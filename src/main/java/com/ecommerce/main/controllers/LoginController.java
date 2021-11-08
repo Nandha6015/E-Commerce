@@ -21,7 +21,7 @@ public class LoginController {
 	public String index() {
 		return "index";
 	}
-	
+
 	@RequestMapping("addUser")
 	public ModelAndView addUser(HttpServletResponse response, User user) {
 		mv.setViewName("home");
@@ -34,7 +34,7 @@ public class LoginController {
 	@RequestMapping("loginUser")
 	public ModelAndView loginUser(HttpServletResponse response, User verifyuser) {
 		User user = userrepo.findByUserEmail(verifyuser.getUserEmail());
-		
+
 		if (user.getUserPassword().equals(verifyuser.getUserPassword())) {
 			mv.setViewName("home");
 			mv.addObject(user);

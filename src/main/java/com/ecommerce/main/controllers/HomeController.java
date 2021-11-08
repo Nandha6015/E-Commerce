@@ -23,11 +23,10 @@ public class HomeController {
 
 	ModelAndView mv = new ModelAndView();
 	User user;
-	
-	
 
 	public User readCookkies(@CookieValue(value = "userId", defaultValue = "") String userId) {
-		if(user == null)user = userrepo.findById(Integer.valueOf(userId)).orElse(new User());
+		if (user == null)
+			user = userrepo.findById(Integer.valueOf(userId)).orElse(new User());
 		return user;
 	}
 
@@ -58,8 +57,8 @@ public class HomeController {
 	@RequestMapping("products")
 	public ModelAndView product() {
 		List<Products> products = (List<Products>) productsrepo.findAll();
-		mv.addObject("product",products);
-		mv.setViewName("products");
+		mv.addObject("product", products);
+		mv.setViewName("product");
 		return mv;
 	}
 }
