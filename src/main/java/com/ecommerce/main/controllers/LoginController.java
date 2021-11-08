@@ -2,6 +2,7 @@ package com.ecommerce.main.controllers;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -26,13 +27,13 @@ public class LoginController {
 	public ModelAndView addUser(HttpServletResponse response, User user) {
 		mv.setViewName("home");
 		userrepo.save(user);
-		response.addCookie(new Cookie("userId", String.valueOf(user.getUserId())));
+		response.addCookie(new Cookie("userId", user.toString()));
 		mv.addObject(user);
 		return mv;
 	}
 
 	@RequestMapping("loginUser")
-	public ModelAndView loginUser(HttpServletResponse response, User verifyuser) {
+	public ModelAndView loginUser(HttpSession session, User verifyuser) {
 		User user = userrepo.findByUserEmail(verifyuser.getUserEmail());
 
 		if (user.getUserPassword().equals(verifyuser.getUserPassword())) {
@@ -41,7 +42,8 @@ public class LoginController {
 		} else {
 			mv.setViewName("login");
 		}
-		response.addCookie(new Cookie("userId", String.valueOf(user.getUserId())));
+		session.setAttribute("user", user);
+		
 		return mv;
 	}
 
