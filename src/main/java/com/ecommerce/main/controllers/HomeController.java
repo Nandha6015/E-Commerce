@@ -2,9 +2,10 @@ package com.ecommerce.main.controllers;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -22,26 +23,19 @@ public class HomeController {
 	UserRepo userrepo;
 
 	ModelAndView mv = new ModelAndView();
-	User user;
-
-	public User readCookkies(@CookieValue(value = "userId", defaultValue = "") String userId) {
-		if (user == null)
-			user = userrepo.findById(Integer.valueOf(userId)).orElse(new User());
-		return user;
-	}
 
 	@RequestMapping("profile")
-	public ModelAndView profile() {
-		User u = this.readCookkies("");
-		System.out.println(u);
+	public ModelAndView profile(HttpSession session) {
+		User user = (User) session.getAttribute("user");
 		mv.addObject(user);
 		mv.setViewName("profilesaved");
 		return mv;
 	}
 
 	@RequestMapping("home")
-	public ModelAndView home() {
-		mv.addObject(this.user);
+	public ModelAndView home(HttpSession session) {
+		User user = (User) session.getAttribute("user");
+		mv.addObject(user);
 		mv.setViewName("home");
 		return mv;
 	}
@@ -58,7 +52,7 @@ public class HomeController {
 	public ModelAndView product() {
 		List<Products> products = (List<Products>) productsrepo.findAll();
 		mv.addObject("product", products);
-		mv.setViewName("product");
+		mv.setViewName("products");
 		return mv;
 		
 	}

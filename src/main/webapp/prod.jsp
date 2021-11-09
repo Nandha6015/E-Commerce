@@ -11,13 +11,16 @@
 <link rel="stylesheet" href="product.css" />
 </head>
 <body>
-	<c:forEach items="${product}" var="prod">
-	<tr>
-	<td><c:out value="${prod.prodName}" /></td>
-	<td><c:out value="${prod.prodImgSrc}" /></td>
-	<td><c:out value="${prod.prodDesc}" /></td>
-	<td><c:out value="${prod.prodPrice}" /></td>
-	</tr><br/>
-	</c:forEach>
+	<% for ( Products products : uList )
+        {
+            %>
+        <div class="grid-item4"> <%= theUser.getuID() %> </div>
+        <div class="grid-item4"> <%= theUser.getuName() %> </div>
+        <div class="grid-item4"> <%= theUser.getuEmail() %> </div>
+        <div class="grid-item4"> <%= theUser.getuRole() %> / <%= theUser.getuStatus() %> </div>
+
+        <%
+        }
+        %>
 </body>
 </html>
