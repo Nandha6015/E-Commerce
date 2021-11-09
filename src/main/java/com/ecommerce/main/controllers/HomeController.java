@@ -60,5 +60,6 @@ public class HomeController {
 		mv.addObject("product", products);
 		mv.setViewName("product");
 		return mv;
+		
 	}
 }
