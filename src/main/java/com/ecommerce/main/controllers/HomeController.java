@@ -2,7 +2,6 @@ package com.ecommerce.main.controllers;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -99,6 +98,7 @@ public class HomeController {
 		Orders orders = new Orders();
 		orders.setUserId(userid);
 		orders.setOrderDate(LocalDateTime.now());
+		System.out.println(orders.toString());
 		OrderDetails orderdetails = new OrderDetails();
 		List<Cart> cartlist = cartrepo.findAllByUserId(userid);
 		for (int i = 0; i < cartlist.size(); i++) {

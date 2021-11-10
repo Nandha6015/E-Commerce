@@ -40,6 +40,11 @@ public class Orders {
 	public void setUserId(int userId) {
 		this.userId = userId;
 	}
+	@Override
+	public String toString() {
+		return "Orders [orderId=" + orderId + ", userId=" + userId + ", orderAmount=" + orderAmount + ", orderDate="
+				+ orderDate + "]";
+	}
 	
 	
 }
