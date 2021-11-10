@@ -1,8 +1,9 @@
 .container {
   box-shadow: 1px lightgrey;
-  /*height: 300px;*/
   padding: 30px;
+  
 }
+
 .main {
   display: flex;
 }
@@ -10,12 +11,12 @@
 .left-column {
 	width: 600px;
   height: 250px;
-  background-color: bisque;
+ 
 	
 }
 
 .right-column {
-  background-color: pink;
+ 
   width: 500px;
   padding-left:100px;
 }
@@ -33,3 +34,81 @@
 .cart-btn:hover {
   background-color: rgb(8, 86, 231);
 }
+
+
+nav{
+	flex: 1;
+	text-align: right;	
+}
+a{
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+}
+
+a{
+	text-decoration: none;
+	color: black;
+	border-color: white;
+}
+.button ul{
+	display: inline-block;
+	list-style-type: none;
+}
+
+.button ul li{
+	margin-right: 20px;
+	background-color:azure;
+	justify-content: center;
+	align-items: center;
+	width:105px;
+	height: 40px;
+	font-size:25px;
+	box-shadow: 2px 2px 30px rgba(0,0,0,0.1);
+	display: inline-flex;
+	margin-top:-8px;
+}
+
+
+
+
+
+.button {
+	background-color:black;
+	overflow: hidden;
+  }
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  

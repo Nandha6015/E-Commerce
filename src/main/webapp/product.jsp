@@ -14,6 +14,17 @@
 </script>
 </head>
 <body>
+	
+	<nav class="button">
+		<ul>
+			<li><a href="products" class="head">Product</a></li>
+			<li><a href="cart" class="head">Cart</a></li>
+			<li><a href="orders" class="head">Orders</a></li>
+			<li><a href="profile" class="head">${user.userName}</a></li>
+			<li><a href="index.jsp" class="head">Logout</a></li>
+		</ul>
+	</nav>
+	
 	<div class="container">
 		<c:forEach items="${product}" var="prod">
 
@@ -23,8 +34,11 @@
 
 				</div>
 				<div class="right-column">
-					${prod.prodName} ${prod.prodDesc} ${prod.prodPrice} <a
-						href="cart.html" class="cart-btn">Add to cart</a>
+					<b style="font-size:30px"> ${prod.prodName}</b><br>  
+					<i style="font-size:20px"> ${prod.prodDesc}</i><br>
+					<b style="font-size:30px">${prod.prodPrice}</b><br> 
+					<a href="cart.html" class="cart-btn">Add to cart</a>
+					
 				</div>
 			</div>
 		</c:forEach>
