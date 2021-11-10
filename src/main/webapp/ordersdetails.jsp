@@ -7,27 +7,30 @@
 <meta charset="UTF-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>product</title>
-<link rel="stylesheet" href="product.css" />
+<title>OrderDetails</title>
+<link rel="stylesheet" href="cart.css" />
 <script>
 	
 </script>
 </head>
 <body>
 	<div class="container">
-		<c:forEach items="${product}" var="prod">
+		<c:forEach items="${cart}" var="prod">
 
 			<div class="main">
 				<div class="left-column">
-					<img src="${prod.prodImgSrc}" alt="${prod.prodName}" width=400px height=200px>
-
+					<img id="img" src="${prod.prodImgSrc}" alt="${prod.prodName}">
 				</div>
 				<div class="right-column">
-					${prod.prodName} ${prod.prodDesc} ${prod.prodPrice} <a
-						href="addToCart?prodId=${prod.prodId}" class="cart-btn">Add to cart</a>
+					${prod.prodName}
+					<p class="prod-ttl-price">total price here</p>
 				</div>
 			</div>
 		</c:forEach>
+	</div>
+	<div class="main1">
+		<p class="cart-price">cart price here</p>
+		<a class="order-btn">order</a>
 	</div>
 </body>
 </html>

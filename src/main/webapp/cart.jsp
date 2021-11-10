@@ -7,7 +7,7 @@
 <meta charset="UTF-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>product</title>
+<title>Cart</title>
 <link rel="stylesheet" href="cart.css" />
 <script>
 	
@@ -35,7 +35,7 @@
 	</div>
 	<div class="main1">
 		<p class="cart-price">cart price here</p>
-		<a class="order-btn">order</a>
+		<a href="addToOrders" class="order-btn">order</a>
 	</div>
 </body>
 </html>
