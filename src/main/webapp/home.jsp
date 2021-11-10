@@ -37,7 +37,7 @@
 						<img src="4.png">
 						
 						</div>
-						<a href="product.html" class="cart">See more</a>
+						<a href="products" class="cart">See more</a>
 					</div>
 </body>
 </html>
