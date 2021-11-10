@@ -9,8 +9,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.ecommerce.main.model.Cart;
 import com.ecommerce.main.model.Products;
 import com.ecommerce.main.model.User;
+import com.ecommerce.main.repo.CartRepo;
 import com.ecommerce.main.repo.ProductsRepo;
 import com.ecommerce.main.repo.UserRepo;
 
@@ -21,21 +23,21 @@ public class HomeController {
 	ProductsRepo productsrepo;
 	@Autowired
 	UserRepo userrepo;
-
+	@Autowired
+	CartRepo cartrepo;
+	int i=1;
 	ModelAndView mv = new ModelAndView();
 
 	@RequestMapping("profile")
 	public ModelAndView profile(HttpSession session) {
-		User user = (User) session.getAttribute("user");
-		mv.addObject(user);
+		mv.addObject(session.getAttribute("user"));
 		mv.setViewName("profilesaved");
 		return mv;
 	}
 
 	@RequestMapping("home")
 	public ModelAndView home(HttpSession session) {
-		User user = (User) session.getAttribute("user");
-		mv.addObject(user);
+		mv.addObject(session.getAttribute("user"));
 		mv.setViewName("home");
 		return mv;
 	}
@@ -50,9 +52,29 @@ public class HomeController {
 
 	@RequestMapping("products")
 	public ModelAndView product() {
-		List<Products> products = (List<Products>) productsrepo.findAll();
-		mv.addObject("product", products);
-		mv.setViewName("products");
+		List<Products> productslist = (List<Products>) productsrepo.findAll();
+		mv.addObject("product",productslist);
+		mv.setViewName("product");
+		return mv;
+	}
+	
+	@RequestMapping("addToCart")
+	public String addToCart(Cart cart) {
+		Products product = productsrepo.findById(cart.getProdId()).orElse(null);
+		cart.setProdName(product.getProdName());
+		cart.setProdImgSrc(product.getProdImgSrc());
+		cart.setProdNos(1);
+		cart.setCartTotalPrice(product.getProdPrice());
+		cart.setProdTotalPrice(product.getProdPrice());
+		cartrepo.save(cart);
+		return "redirect:/products";
+	}
+	
+	@RequestMapping("cart")
+	public ModelAndView cart() {
+		List<Cart> cartlist = (List<Cart>) cartrepo.findAll();
+		mv.addObject("cart", cartlist);
+		mv.setViewName("cart");
 		return mv;
 	}
 }

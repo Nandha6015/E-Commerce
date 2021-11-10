@@ -1,7 +1,5 @@
 package com.ecommerce.main.controllers;
 
-import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,10 +22,10 @@ public class LoginController {
 	}
 
 	@RequestMapping("addUser")
-	public ModelAndView addUser(HttpServletResponse response, User user) {
-		mv.setViewName("home");
+	public ModelAndView addUser(HttpSession session, User user) {
+		session.setAttribute("user", user);
 		userrepo.save(user);
-		response.addCookie(new Cookie("userId", user.toString()));
+		mv.setViewName("home");
 		mv.addObject(user);
 		return mv;
 	}

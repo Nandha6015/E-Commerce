@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Flipkart</title>
+<title>Order Now</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>

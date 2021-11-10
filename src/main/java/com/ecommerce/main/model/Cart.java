@@ -13,9 +13,9 @@ public class Cart {
 	private int prodId;
 	private String prodName;
 	private String prodImgSrc;
-	private String prodNos;
-	private String prodTotalPrice;
-	private String cartTotalPrice;
+	private int prodNos;
+	private double prodTotalPrice;
+	private double cartTotalPrice;
 	
 	public int getCartId() {
 		return cartId;
@@ -41,23 +41,29 @@ public class Cart {
 	public void setProdImgSrc(String prodImgSrc) {
 		this.prodImgSrc = prodImgSrc;
 	}
-	public String getProdNos() {
+	public int getProdNos() {
 		return prodNos;
 	}
-	public void setProdNos(String prodNos) {
+	public void setProdNos(int prodNos) {
 		this.prodNos = prodNos;
 	}
-	public String getProdTotalPrice() {
+	public double getProdTotalPrice() {
 		return prodTotalPrice;
 	}
-	public void setProdTotalPrice(String prodTotalPrice) {
+	public void setProdTotalPrice(double prodTotalPrice) {
 		this.prodTotalPrice = prodTotalPrice;
 	}
-	public String getCartTotalPrice() {
+	public double getCartTotalPrice() {
 		return cartTotalPrice;
 	}
-	public void setCartTotalPrice(String cartTotalPrice) {
+	public void setCartTotalPrice(double cartTotalPrice) {
 		this.cartTotalPrice = cartTotalPrice;
+	}
+	@Override
+	public String toString() {
+		return "Cart [cartId=" + cartId + ", prodId=" + prodId + ", prodName=" + prodName + ", prodImgSrc=" + prodImgSrc
+				+ ", prodNos=" + prodNos + ", prodTotalPrice=" + prodTotalPrice + ", cartTotalPrice=" + cartTotalPrice
+				+ "]";
 	}
 	
 		

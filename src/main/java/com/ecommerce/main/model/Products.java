@@ -45,10 +45,5 @@ public class Products {
 	public void setProdDesc(String prodDesc) {
 		this.prodDesc = prodDesc;
 	}
-	@Override
-	public String toString() {
-		return "Products [prodId=" + prodId + ", prodName=" + prodName + ", prodImgSrc=" + prodImgSrc + ", prodPrice="
-				+ prodPrice + ", prodDesc=" + prodDesc + "]";
-	}
 	
 }
