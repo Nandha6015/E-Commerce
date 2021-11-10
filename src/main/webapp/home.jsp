@@ -4,8 +4,13 @@
 <title>Order Now</title>
 <link rel="stylesheet" href="style.css">
 </head>
+<style>
+	body{
+		background-color:azure;
+	}
+	</style>
 <body>
-	<div class="main">
+	
 		<nav class="button">
 			<ul>
 				<li><a href="products" class="head">Product</a></li>
@@ -15,6 +20,24 @@
 				<li><a href="index.jsp" class="head">Logout</a></li>
 			</ul>
 		</nav>
-	</div>
+		<div class="main">
+		<div class="image"> 
+			<img src="1.png">
+			
+			</div>
+			<div class="image"> 
+				<img src="2.png">
+				
+				</div>
+				<div class="image"> 
+					<img src="3.png">
+					
+					</div>
+					<div class="image"> 
+						<img src="4.png">
+						
+						</div>
+						<a href="product.html" class="cart">See more</a>
+					</div>
 </body>
 </html>
