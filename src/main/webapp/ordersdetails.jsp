@@ -7,7 +7,7 @@
 <meta charset="UTF-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Cart</title>
+<title>OrderDetails</title>
 <link rel="stylesheet" href="cart.css" />
 <script>
 	
@@ -23,11 +23,6 @@
 				</div>
 				<div class="right-column">
 					${prod.prodName}
-					<div class="product-count">
-						<button class="button-count no-active" disabled>-</button>
-						<input type="text" readonly class="number-product" value="1">
-						<button class="button-count">+</button>
-					</div>
 					<p class="prod-ttl-price">total price here</p>
 				</div>
 			</div>
@@ -35,7 +30,7 @@
 	</div>
 	<div class="main1">
 		<p class="cart-price">cart price here</p>
-		<a href="addToOrders" class="order-btn">order</a>
+		<a class="order-btn">order</a>
 	</div>
 </body>
 </html>

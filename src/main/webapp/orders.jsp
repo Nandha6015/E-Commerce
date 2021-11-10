@@ -7,7 +7,7 @@
 <meta charset="UTF-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Cart</title>
+<title>Orders</title>
 <link rel="stylesheet" href="cart.css" />
 <script>
 	
@@ -15,27 +15,17 @@
 </head>
 <body>
 	<div class="container">
-		<c:forEach items="${cart}" var="prod">
-
+		<c:forEach items="${order}" var="ord">
 			<div class="main">
 				<div class="left-column">
-					<img id="img" src="${prod.prodImgSrc}" alt="${prod.prodName}">
+					<img id="img" src="${ord.prodImgSrc}" alt="${ord.prodName}">
 				</div>
 				<div class="right-column">
-					${prod.prodName}
-					<div class="product-count">
-						<button class="button-count no-active" disabled>-</button>
-						<input type="text" readonly class="number-product" value="1">
-						<button class="button-count">+</button>
-					</div>
-					<p class="prod-ttl-price">total price here</p>
+					${ord.prodName} ${ord.prodNos}
+					<p class="prod-ttl-price">${ord.prodTotalPrice}</p>
 				</div>
 			</div>
 		</c:forEach>
-	</div>
-	<div class="main1">
-		<p class="cart-price">cart price here</p>
-		<a href="addToOrders" class="order-btn">order</a>
 	</div>
 </body>
 </html>

@@ -37,8 +37,9 @@
 					<b style="font-size:30px"> ${prod.prodName}</b><br>  
 					<i style="font-size:20px"> ${prod.prodDesc}</i><br>
 					<b style="font-size:30px">${prod.prodPrice}</b><br> 
-					<a href="cart.html" class="cart-btn">Add to cart</a>
+					<a href="addToCart?prodId=${prod.prodId}" class="cart-btn">Add to cart</a>
 					
+				
 				</div>
 			</div>
 		</c:forEach>
