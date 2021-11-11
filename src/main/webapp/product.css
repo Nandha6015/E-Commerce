@@ -9,23 +9,24 @@
 }
 
 .left-column {
-	width: 600px;
-  height: 250px;
- 
+	width: 400px;
+  height: 1000px;
 	
 }
 
 .right-column {
  
-  width: 500px;
-  padding-left:100px;
+  width: 200px;
+  height: 1000px;
+  
+  
 }
 
 .cart-btn {
   display: inline-block;
   background-color: white;
   border-radius: 6px;
-  font-size: 16px;
+  font-size: px;
   color: black;
   text-decoration: none;
   padding: 12px 15px;
