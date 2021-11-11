@@ -96,9 +96,9 @@ public class HomeController {
 		int cartTotalPrice = 0;
 		int userid = ((User) session.getAttribute("user")).getUserId();
 		Orders orders = new Orders();
+		ordersrepo.save(orders);
 		orders.setUserId(userid);
 		orders.setOrderDate(LocalDateTime.now());
-		System.out.println(orders.toString());
 		OrderDetails orderdetails = new OrderDetails();
 		List<Cart> cartlist = cartrepo.findAllByUserId(userid);
 		for (int i = 0; i < cartlist.size(); i++) {
