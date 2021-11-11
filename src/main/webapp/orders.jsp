@@ -18,7 +18,7 @@
 		<c:forEach items="${order}" var="ord">
 			<div class="main">
 				<div class="left-column">
-					<img id="img" src="${ord.prodImgSrc}" alt="${ord.prodName}">
+					<img id="img" src="${ord.prodImgSrc}.png" alt="${ord.prodName}">
 				</div>
 				<div class="right-column">
 					${ord.prodName} ${ord.prodNos}
