@@ -22,19 +22,16 @@
 
 .left-column {
    width: 300px;
-  height: 400px;
-
+  height: 300px;
 	margin-top:50px;
-	margin-left:80px;
-	
+	margin-left:80px;	
 }
-
 .right-column {
  
   width: 700px;
-  height: 400px;
-  
-  
+  height: 300px;  
+  margin-top:50px;
+	margin-left:80px;	
 }
 
 .cart-btn {
@@ -114,7 +111,7 @@ a{
 
 			<div class="main">
 				<div class="left-column">
-					<img src="${prod.prodImgSrc}.png"  alt="${prod.prodName}" width=auto height=250 px;>
+					<img src="${prod.prodImgSrc}.png"  alt="${prod.prodName}" width=auto height=250 px>
 				</div>
 				<div class="right-column">
 					

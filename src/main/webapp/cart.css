@@ -10,11 +10,11 @@
 .left-column {
   width: 600px;
   height: 250px;
-  background-color: bisque;
+  
 }
 
 .right-column {
-  background-color: pink;
+ 
   width: 500px;
   padding-left: 100px;
 }
