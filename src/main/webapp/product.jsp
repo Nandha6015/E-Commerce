@@ -30,8 +30,7 @@
 
 			<div class="main">
 				<div class="left-column">
-					<img src="${prod.prodImgSrc}" alt="${prod.prodName}" width=400px height=200px>
-
+					<img src="${prod.prodImgSrc}.png" alt="${prod.prodName}" width=400px height=200px>
 				</div>
 				<div class="right-column">
 					<b style="font-size:30px"> ${prod.prodName}</b><br>  
