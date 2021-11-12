@@ -83,10 +83,6 @@ a{
 	margin-top:-8px;
 }
 
-
-
-
-
 .button {
 	background-color:black;
 	overflow: hidden;
@@ -97,6 +93,7 @@ a{
 <body>
 	
 	<nav class="button">
+		<img style="float: left" src="18.png" width="200px" height="50px" />
 		<ul>
 			<li><a href="products" class="head">Product</a></li>
 			<li><a href="cart" class="head">Cart</a></li>
@@ -111,14 +108,14 @@ a{
 
 			<div class="main">
 				<div class="left-column">
-					<img src="${prod.prodImgSrc}.png"  alt="${prod.prodName}" width=auto height=250 px>
+					<a href="productdetails.html"><img src="${prod.prodImgSrc}.png"  alt="${prod.prodName}" width=auto height=250 px>
 				</div>
 				<div class="right-column">
 					
 					<b style="font-size:30px"> ${prod.prodName}</b><br>  
 					<i style="font-size:20px"> ${prod.prodDesc}</i><br>
 					<b style="font-size:30px">${prod.prodPrice}</b><br> 
-					<a href="addToCart?prodId=${prod.prodId}" class="cart-btn">Add to cart</a>
+					
 					
 				</div>
 			</div>

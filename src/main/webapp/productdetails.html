@@ -1,6 +1,4 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%> 
-<%@page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +9,21 @@
 
 </head>
 <style>
-	
+	.cart-btn {
+  display: inline-block;
+  background-color: white;
+  border-radius: 6px;
+  font-size: 20px;
+  color:red;
+  text-decoration: none;
+  padding: 12px 15px;
+  transition: all 0.5s;
+}
+.cart-btn:hover {
+  background-color:rgb(230, 223, 223);
+}
+
+
 nav{
 	flex: 1;
 	text-align: right;	
@@ -149,7 +161,6 @@ a{
   left: 1100px;
 }
 
-
 </style>
 <body>
 	<nav class="button">
@@ -166,13 +177,14 @@ a{
 		<c:forEach items="${cart}" var="prod">
 			<div class="main">
 				<div class="left-column">
-					<img src="${prod.prodImgSrc}.png" alt="${prod.prodName}" width=auto height=250 px>
+					<img src="0.png"  width=auto height=250 px>
 				</div>
 				<div class="right-column">
-					<b style="font-size:30px">${prod.prodName}</b>
-					<p style="font-size:30px" class="prod-ttl-price">${prod.prodTotalPrice}</p>
-					<p class="cart-price">cart</p>
-		      <a href="addToOrders" class="order-btn">order</a>
+					<b style="font-size:30px">pname</b><br>
+					<i style="font-size:30px">product desc</i><br>
+                    <b style="font-size:30px">price</b><br>
+					<a href="addToCart?prodId=${prod.prodId}" class="cart-btn">Add to cart</a>
+		            <a href="addToOrders" class="order-btn">Buy now</a>
 				</div>
 			
 			</div>

@@ -11,7 +11,21 @@
 
 </head>
 <style>
-	
+	.cart-btn {
+  display: inline-block;
+  background-color: white;
+  border-radius: 6px;
+  font-size: 20px;
+  color:red;
+  text-decoration: none;
+  padding: 12px 15px;
+  transition: all 0.5s;
+}
+.cart-btn:hover {
+  background-color:rgb(230, 223, 223);
+}
+
+
 nav{
 	flex: 1;
 	text-align: right;	
@@ -166,13 +180,13 @@ a{
 		<c:forEach items="${cart}" var="prod">
 			<div class="main">
 				<div class="left-column">
-					<img src="${prod.prodImgSrc}.png" alt="${prod.prodName}" width=auto height=250 px>
+					<img src="18.png" alt="${prod.prodName}" width=auto height=250 px>
 				</div>
 				<div class="right-column">
-					<b style="font-size:30px">${prod.prodName}</b>
-					<p style="font-size:30px" class="prod-ttl-price">${prod.prodTotalPrice}</p>
-					<p class="cart-price">cart</p>
-		      <a href="addToOrders" class="order-btn">order</a>
+					<b style="font-size:30px">pname</b>
+					<p style="font-size:30px" class="prod-ttl-price">product desc</p>
+					<a href="addToCart?prodId=${prod.prodId}" class="cart-btn">Add to cart</a>
+		            <a href="addToOrders" class="order-btn">Buy now</a>
 				</div>
 			
 			</div>
