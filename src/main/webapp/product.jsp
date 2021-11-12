@@ -117,7 +117,7 @@ a{
 					
 					<b style="font-size:30px"> ${prod.prodName}</b><br>  
 					<i style="font-size:20px"> ${prod.prodDesc}</i><br>
-					<b style="font-size:30px">${prod.prodPrice}</b><br> 
+					<b style="font-size:30px">Rs.${prod.prodPrice}</b><br> 
 					<a href="addToCart?prodId=${prod.prodId}" class="cart-btn">Add to cart</a>
 					
 				</div>
