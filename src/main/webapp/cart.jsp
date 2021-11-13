@@ -170,13 +170,14 @@ a{
 				</div>
 				<div class="right-column">
 					<b style="font-size:30px">${prod.prodName}</b>
-					<p style="font-size:30px" class="prod-ttl-price">${prod.prodTotalPrice}</p>
-					<p class="cart-price">cart</p>
-		      <a href="addToOrders" class="order-btn">order</a>
+					<p style="font-size:30px" class="prod-ttl-price">Rs.${prod.prodTotalPrice}</p>
+					
 				</div>
-			
+        
 			</div>
 		</c:forEach>
-	</div>	
+	</div>
+  <p class="cart-price">cart</p>
+        <a href="addToOrders" class="order-btn">order</a>	
 </body>
 </html>

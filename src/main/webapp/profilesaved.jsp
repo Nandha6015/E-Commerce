@@ -19,7 +19,8 @@
       
         img.image {
             width:30%;
-            border-radius: 50%;
+			height:40%;
+            border-radius:auto;
         }
 	
 nav{
@@ -62,17 +63,16 @@ a{
   }
  
   table {
-  background-color: white;
+  background-color: whitesmoke;
   border: 1px solid azure;
   box-shadow: 1px lightgrey;
-  background-image: url('25.png');
   border-radius: 20px;
   width: 500px;
   height: 400px;
   padding: 30px;
-  margin-left: 350px;
-  margin-top: 80px;
-  margin-bottom: 100px;
+  margin-left: 430px;
+  margin-top: 0px;
+  margin-bottom: 150px;
 }
 #save1 {
   align-self: center;
@@ -93,9 +93,11 @@ a{
 			<li><a href="index.jsp" class="head">Logout</a></li>
 		</ul>
 	</nav>
-	
+	<div class="images">
+		<img src="26.png" alt="image" class="image" />
+	  </div>
 <table>
-
+	
 	<tr>
 		<td><label style="color: black;">UserName:</label></td>
 		<td><p>${user.userName}</p></td>
@@ -103,6 +105,7 @@ a{
 	<tr>
 		<td><label style="color: black;">UserEmail:</label></td>
 		<td><p>${user.userEmail}</p></td>
+	</tr>
 	<tr>
 		<td><label style="color: black;">UserPhoneno:</label></td>
 		<td><p>${user.userPhoneNumber}</p></td>

@@ -177,20 +177,17 @@ a{
 		</ul>
 	</nav>
 	<div class="container">
-		<c:forEach items="${cart}" var="prod">
 			<div class="main">
 				<div class="left-column">
-					<img src="18.png" alt="${prod.prodName}" width=auto height=250 px>
+					<img src="${products.prodImgSrc}.png" alt="${products.prodName}" width=auto height=250 px>
 				</div>
 				<div class="right-column">
-					<b style="font-size:30px">pname</b>
-					<p style="font-size:30px" class="prod-ttl-price">product desc</p>
-					<a href="addToCart?prodId=${prod.prodId}" class="cart-btn">Add to cart</a>
-		            <a href="addToOrders" class="order-btn">Buy now</a>
-				</div>
-			
+					<b style="font-size:30px">${products.prodName}</b>
+					<p style="font-size:30px" class="prod-ttl-price">${products.prodDesc}</p>
+					<a href="addToCart?prodId=${products.prodId}" class="cart-btn">Add to cart</a>
+		            <a href="addToBuy?prodId=${products.prodId}" class="order-btn">Buy now</a>
+				</div>			
 			</div>
-		</c:forEach>
 	</div>	
 </body>
 </html>

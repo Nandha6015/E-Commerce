@@ -8,9 +8,22 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Orders</title>
-<link rel="stylesheet" href="cart.css" />
+
 <style>
+	.left-column {
+   width: 300px;
+  height: 400px;
+  margin-top:50px;
+	margin-left:80px;	
+}
 	
+.right-column {
+ 
+  width: 700px;
+  height: 400px; 
+  margin-top:50px;
+	margin-left:80px;	 
+}
 nav{
 	flex: 1;
 	text-align: right;	
@@ -49,6 +62,13 @@ a{
 	background-color:black;
 	overflow: hidden;
   }
+  .main {
+  display: flex;
+}
+.container {
+  box-shadow: 1px lightgrey;
+  padding: 30px;
+}
 </style>
 <script>
 	
@@ -69,7 +89,7 @@ a{
 		<c:forEach items="${order}" var="ord">
 			<div class="main">
 				<div class="left-column">
-					<img id="img" src="${ord.prodImgSrc}.png" alt="${ord.prodName}">
+					<img id="img" src="${ord.prodImgSrc}.png" alt="${ord.prodName}" width=auto height=250 px>
 				</div>
 				<div class="right-column">
 					${ord.prodName} ${ord.prodNos}

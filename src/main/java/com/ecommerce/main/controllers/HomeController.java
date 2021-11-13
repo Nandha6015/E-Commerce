@@ -53,7 +53,8 @@ public class HomeController {
 	}
 
 	@RequestMapping("updateProfile")
-	public ModelAndView updateProfile(User user) {
+	public ModelAndView updateProfile(HttpSession session, User user) {
+		user.setUserId(((User) session.getAttribute("user")).getUserId());
 		userrepo.save(user);
 		mv.addObject(user);
 		mv.setViewName("profilesaved");
@@ -65,6 +66,14 @@ public class HomeController {
 		List<Products> productslist = (List<Products>) productsrepo.findAll();
 		mv.addObject("product", productslist);
 		mv.setViewName("product");
+		return mv;
+	}
+
+	@RequestMapping("productdetails")
+	public ModelAndView productDetails(Products product) {
+		Products products = productsrepo.findById(product.getProdId()).orElse(new Products());
+		mv.addObject(products);
+		mv.setViewName("productdetails");
 		return mv;
 	}
 
@@ -117,6 +126,25 @@ public class HomeController {
 		ordersrepo.save(orders);
 		cartrepo.deleteAll();
 		return "redirect:/cart";
+	}
+	
+	@RequestMapping("addToBuy")
+	public String buy(HttpSession session, Products product) {
+		Products products = productsrepo.findById(product.getProdId()).orElse(new Products());
+		Orders orders = new Orders();
+		orders.setUserId(((User) session.getAttribute("user")).getUserId());
+		orders.setOrderDate(LocalDateTime.now());
+		orders.setOrderAmount(products.getProdPrice());
+		ordersrepo.save(orders);
+		OrderDetails orderdetails = new OrderDetails();
+		orderdetails.setOrderId(orders.getOrderId());
+		orderdetails.setProdId(products.getProdId());
+		orderdetails.setProdImgSrc(products.getProdImgSrc());
+		orderdetails.setProdName(products.getProdName());
+		orderdetails.setProdNos(1);
+		orderdetails.setProdTotalPrice(products.getProdPrice());
+		orderdetailsrepo.save(orderdetails);
+		return "redirect:/products";
 	}
 
 	@RequestMapping("orders")

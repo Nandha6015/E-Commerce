@@ -1,11 +1,19 @@
 <html>
 <head>
-<link rel="stylesheet" href="profile.css">
+
 </head>
 <style>
-	body{
-		background-color:azure;
-	}
+.images {
+            text-align: center;
+            margin: 10px 0 10px 0;
+        }
+      
+        img.image {
+            width:30%;
+			height:40%;
+            border-radius:auto;
+        }
+	
 nav{
 	flex: 1;
 	text-align: right;	
@@ -44,13 +52,28 @@ a{
 	background-color:black;
 	overflow: hidden;
   }
-  table{
-	  background-color:azure;
-  }
-  tr:hover {background-color:lightblue;}
+  
+  table {
+  background-color: whitesmoke;
+  border: 1px solid azure;
+  box-shadow: 1px lightgrey;
+  border-radius: 20px;
+  width: 500px;
+  height: 300px;
+  padding: 30px;
+  margin-left: 350px;
+  margin-top: 10px;
+  margin-bottom: 150px;
+}
+#save1 {
+  align-self: center;
+  height: 30px;
+  justify-content: center;
+  align-content: center;
+}
 
 </style>
-<body>
+
 <form action="updateProfile">
 	<nav class="button">
 		<img style="float: left" src="18.png" width="200px" height="50px" />
@@ -62,6 +85,10 @@ a{
 			<li><a href="index.jsp" class="head">Logout</a></li>
 		</ul>
 	</nav>
+	<body>
+		<div class="images">
+			<img src="25.png" alt="image" class="image" />
+		  </div>
 	<table>
 
 		<tr>
