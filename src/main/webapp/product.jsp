@@ -87,7 +87,7 @@ a{
 	background-color:black;
 	overflow: hidden;
   }
-
+ 
 </style>
 </head>
 <body>
@@ -105,10 +105,11 @@ a{
 	
 	<div class="container">
 		<c:forEach items="${product}" var="prod">
-
+			
+       <hr style="height:0.1px;border-width:0;color:rgb(10, 10, 10);background-color: rgb(17, 16, 16);">
 			<div class="main">
 				<div class="left-column">
-					<a href="productdetails.html"><img src="${prod.prodImgSrc}.png"  alt="${prod.prodName}" width=auto height=250 px>
+					<a href="productdetails.html"><img src="${prod.prodImgSrc}.png"  alt="${prod.prodName}" class="slide" width=auto height=250 px>
 				</div>
 				<div class="right-column">
 					
@@ -118,8 +119,12 @@ a{
 					
 					
 				</div>
+			</hr>
 			</div>
+		
 		</c:forEach>
+		
 	</div>
+	
 </body>
 </html>

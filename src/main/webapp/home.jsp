@@ -18,7 +18,7 @@
 				<li><a href="cart" class="head">Cart</a></li>
 				<li><a href="orders" class="head">Orders</a></li>
 				<li><a href="profile" class="head">${user.userName}</a></li>
-				<li><a href="index.jsp" class="head">Logout</a></li>
+				<li><a href="/" class="head">Logout</a></li>
 			</ul>
 		</nav>
 		<div class="main">
