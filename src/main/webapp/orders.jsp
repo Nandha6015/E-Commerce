@@ -50,14 +50,17 @@ a{
 	background-color:azure;
 	justify-content: center;
 	align-items: center;
-	width:105px;
+	width:auto;
 	height: 40px;
+	padding: 0 25px ;
 	font-size:25px;
 	box-shadow: 2px 2px 30px rgba(0,0,0,0.1);
 	display: inline-flex;
 	margin-top:-8px;
 }
-
+.current{
+	background-color:aquamarine !important;
+}
 .button {
 	background-color:black;
 	overflow: hidden;
@@ -80,7 +83,7 @@ a{
 		<ul>
 			<li><a href="products" class="head">Product</a></li>
 			<li><a href="cart" class="head">Cart</a></li>
-			<li><a href="orders" class="head">Orders</a></li>
+			<li class="current"><a href="orders" class="head">Orders</a></li>
 			<li><a href="profile" class="head">${user.userName}</a></li>
 			<li><a href="index.jsp" class="head">Logout</a></li>
 		</ul>
@@ -89,13 +92,15 @@ a{
 		<c:forEach items="${order}" var="ord">
 			<div class="main">
 				<div class="left-column">
-					<img id="img" src="${ord.prodImgSrc}.png" alt="${ord.prodName}" width=auto height=250 px>
+					<img id="img" src="${ord.prodImgSrc}.png" alt="${ord.prodName}" width=auto height=250 px >
 				</div>
 				<div class="right-column">
 					${ord.prodName} ${ord.prodNos}
 					<p class="prod-ttl-price">${ord.prodTotalPrice}</p>
 				</div>
 			</div>
+			<hr style="height:0.1px;border-width:0;color:rgb(10, 10, 10);background-color: rgb(17, 16, 16);">	
+	</hr>
 		</c:forEach>
 	</div>
 </body>
