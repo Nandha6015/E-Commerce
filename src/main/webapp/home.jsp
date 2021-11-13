@@ -12,6 +12,7 @@
 <body>
 	
 		<nav class="button">
+			<img style="float: left" src="18.png" width="200px" height="50px" />
 			<ul>
 				<li><a href="products" class="head">Product</a></li>
 				<li><a href="cart" class="head">Cart</a></li>
