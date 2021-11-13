@@ -10,88 +10,89 @@
 <title>product</title>
 
 <style>
-	.container {
-  box-shadow: 1px lightgrey;
-  padding: 30px;
-  
+.container {
+	box-shadow: 1px lightgrey;
+	padding: 30px;
 }
 
 .main {
-  display: flex;
+	display: flex;
 }
 
 .left-column {
-   width: 300px;
-  height: 300px;
-	margin-top:50px;
-	margin-left:80px;	
+	width: 300px;
+	height: 300px;
+	margin-top: 50px;
+	margin-left: 80px;
 }
+
 .right-column {
- 
-  width: 700px;
-  height: 300px;  
-  margin-top:50px;
-	margin-left:80px;	
+	width: 700px;
+	height: 300px;
+	margin-top: 50px;
+	margin-left: 80px;
 }
 
 .cart-btn {
-  display: inline-block;
-  background-color: white;
-  border-radius: 6px;
-  font-size: 20px;
-  color:red;
-  text-decoration: none;
-  padding: 12px 15px;
-  transition: all 0.5s;
+	display: inline-block;
+	background-color: white;
+	border-radius: 6px;
+	font-size: 20px;
+	color: red;
+	text-decoration: none;
+	padding: 12px 15px;
+	transition: all 0.5s;
 }
+
 .cart-btn:hover {
-  background-color:rgb(230, 223, 223);
+	background-color: rgb(230, 223, 223);
 }
 
-
-nav{
+nav {
 	flex: 1;
-	text-align: right;	
-}
-a{
-    text-decoration: none;
-}
-ul{
-    list-style: none;
+	text-align: right;
 }
 
-a{
+a {
+	text-decoration: none;
+}
+
+ul {
+	list-style: none;
+}
+
+a {
 	text-decoration: none;
 	color: black;
 	border-color: white;
 }
-.button ul{
+
+.button ul {
 	display: inline-block;
 	list-style-type: none;
 }
 
-.button ul li{
+.button ul li {
 	margin-right: 20px;
-	background-color:azure;
+	background-color: azure;
 	justify-content: center;
 	align-items: center;
-	width:105px;
+	width: 105px;
 	height: 40px;
-	font-size:25px;
-	box-shadow: 2px 2px 30px rgba(0,0,0,0.1);
+	font-size: 25px;
+	box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.1);
 	display: inline-flex;
-	margin-top:-8px;
+	margin-top: -8px;
 }
 
 .button {
-	background-color:black;
+	background-color: black;
 	overflow: hidden;
-  }
-
+}
 </style>
 </head>
 <body>
-	
+
 	<nav class="button">
 		<img style="float: left" src="18.png" width="200px" height="50px" />
 		<ul>
@@ -102,21 +103,23 @@ a{
 			<li><a href="index.jsp" class="head">Logout</a></li>
 		</ul>
 	</nav>
-	
+
 	<div class="container">
 		<c:forEach items="${product}" var="prod">
 
 			<div class="main">
 				<div class="left-column">
-					<a href="productdetails.jsp"><img src="${prod.prodImgSrc}.png"  alt="${prod.prodName}" width=auto height=250 px></a>
+					<a href="productdetails?prodId=${prod.prodId}"><img
+						src="${prod.prodImgSrc}.png" alt="${prod.prodName}" width=auto
+						height=250 px></a>
 				</div>
 				<div class="right-column">
-					
-					<b style="font-size:30px"> ${prod.prodName}</b><br>  
-					<i style="font-size:20px"> ${prod.prodDesc}</i><br>
-					<b style="font-size:30px">Rs.${prod.prodPrice}</b><br> 
-					
-					
+					<a href="productdetails?prodId=${prod.prodId}"> <b
+						style="font-size: 30px"> ${prod.prodName}</b></a><br> <i
+						style="font-size: 20px"> ${prod.prodDesc}</i><br> <b
+						style="font-size: 30px">Rs.${prod.prodPrice}</b><br>
+
+
 				</div>
 			</div>
 		</c:forEach>
