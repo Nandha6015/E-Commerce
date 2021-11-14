@@ -40,14 +40,24 @@ a {
 	background-color: azure;
 	justify-content: center;
 	align-items: center;
+<<<<<<< HEAD
 	width: 105px;
 	height: 40px;
 	font-size: 25px;
 	box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.1);
+=======
+	width:auto;
+	height: 40px;
+  padding: 0 25px ;
+	font-size:25px;
+	box-shadow: 2px 2px 30px rgba(0,0,0,0.1);
+>>>>>>> 8cd4423a7392e195f44424441300e419070f199c
 	display: inline-flex;
 	margin-top: -8px;
 }
-
+.current{
+	background-color:aquamarine !important;
+}
 .button {
 	background-color: black;
 	overflow: hidden;
@@ -156,7 +166,7 @@ a {
 		<img style="float: left" src="18.png" width="200px" height="50px" />
 		<ul>
 			<li><a href="products" class="head">Product</a></li>
-			<li><a href="cart" class="head">Cart</a></li>
+			<li class="current"><a href="cart" class="head">Cart</a></li>
 			<li><a href="orders" class="head">Orders</a></li>
 			<li><a href="profile" class="head">${user.userName}</a></li>
 			<li><a href="index.jsp" class="head">Logout</a></li>
@@ -174,6 +184,7 @@ a {
 					<p style="font-size: 30px" class="prod-ttl-price">Rs.${prod.prodPrice}</p>
 				</div>
 			</div>
+    
 		</c:forEach>
 	</div>
 	<p class="cart-price">cart</p>
