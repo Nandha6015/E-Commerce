@@ -1,4 +1,4 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%> 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -11,145 +11,145 @@
 
 </head>
 <style>
-	
-nav{
+nav {
 	flex: 1;
-	text-align: right;	
-}
-a{
-    text-decoration: none;
-}
-ul{
-    list-style: none;
+	text-align: right;
 }
 
-a{
+a {
+	text-decoration: none;
+}
+
+ul {
+	list-style: none;
+}
+
+a {
 	text-decoration: none;
 	color: black;
 	border-color: white;
 }
-.button ul{
+
+.button ul {
 	display: inline-block;
 	list-style-type: none;
 }
 
-.button ul li{
+.button ul li {
 	margin-right: 20px;
-	background-color:azure;
+	background-color: azure;
 	justify-content: center;
 	align-items: center;
-	width:105px;
+	width: 105px;
 	height: 40px;
-	font-size:25px;
-	box-shadow: 2px 2px 30px rgba(0,0,0,0.1);
+	font-size: 25px;
+	box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.1);
 	display: inline-flex;
-	margin-top:-8px;
+	margin-top: -8px;
 }
 
 .button {
-	background-color:black;
+	background-color: black;
 	overflow: hidden;
-  }
-  
-  .container {
-  box-shadow: 1px lightgrey;
-  padding: 30px;
+}
+
+.container {
+	box-shadow: 1px lightgrey;
+	padding: 30px;
 }
 
 .main {
-  display: flex;
+	display: flex;
 }
-
-
 
 .left-column {
-   width: 300px;
-  height: 400px;
-  margin-top:50px;
-	margin-left:80px;	
+	width: 300px;
+	height: 400px;
+	margin-top: 50px;
+	margin-left: 80px;
 }
-	
+
 .right-column {
- 
-  width: 700px;
-  height: 400px; 
-  margin-top:50px;
-	margin-left:80px;	 
+	width: 700px;
+	height: 400px;
+	margin-top: 50px;
+	margin-left: 80px;
 }
+
 #img {
-  width: 400px;
-  height: 250px;
-  position: relative;
-  padding-left: 100px;
+	width: 400px;
+	height: 250px;
+	position: relative;
+	padding-left: 100px;
 }
 
 .product-count {
-  position: absolute;
-  top: 25%;
-  left: 45%;
-  height: 30px;
+	position: absolute;
+	top: 25%;
+	left: 45%;
+	height: 30px;
 }
 
 .product-count {
-  text-decoration: none;
-  font-weight: 700;
-  color: black;
-  padding-left: 150px;
-  padding-top: 100px;
+	text-decoration: none;
+	font-weight: 700;
+	color: black;
+	padding-left: 150px;
+	padding-top: 100px;
 }
 
 .button-count {
-  display: inline-block;
-  width: 15px;
-  height: 15px;
-  background-color: #2196f3;
-  color: white;
-  font-size: 12px;
-  line-height: 15px;
-  text-align: center;
-  border: none;
-  outline: none;
+	display: inline-block;
+	width: 15px;
+	height: 15px;
+	background-color: #2196f3;
+	color: white;
+	font-size: 12px;
+	line-height: 15px;
+	text-align: center;
+	border: none;
+	outline: none;
 }
+
 .button-count:active {
-  background-color: #1565c0;
+	background-color: #1565c0;
 }
 
 .number-product {
-  display: inline-block;
-  width: 23px;
-  height: 14px;
-  font-size: 12px;
-  border: 1px solid silver;
-  text-align: center;
+	display: inline-block;
+	width: 23px;
+	height: 14px;
+	font-size: 12px;
+	border: 1px solid silver;
+	text-align: center;
 }
 
 :disabled {
-  background-color: silver;
+	background-color: silver;
 }
 
 .prod-ttl-price {
-  padding-left: 100px;
-  padding-top: 70px;
+	padding-left: 100px;
+	padding-top: 70px;
 }
 
 .cart-price {
-  position: absolute;
-  left: 1000px;
+	position: absolute;
+	left: 1000px;
 }
+
 .order-btn {
-  display: inline-block;
-  background-color: rgb(11, 199, 11);
-  border-radius: 6px;
-  font-size: 16px;
-  color: black;
-  text-decoration: none;
-  padding: 15px 18px;
-  transition: all 0.5s;
-  position: absolute;
-  left: 1100px;
+	display: inline-block;
+	background-color: rgb(11, 199, 11);
+	border-radius: 6px;
+	font-size: 16px;
+	color: black;
+	text-decoration: none;
+	padding: 15px 18px;
+	transition: all 0.5s;
+	position: absolute;
+	left: 1100px;
 }
-
-
 </style>
 <body>
 	<nav class="button">
@@ -166,18 +166,17 @@ a{
 		<c:forEach items="${cart}" var="prod">
 			<div class="main">
 				<div class="left-column">
-					<img src="${prod.prodImgSrc}.png" alt="${prod.prodName}" width=auto height=250 px>
+					<img src="${prod.prodImgSrc}" alt="${prod.prodName}" width=auto
+						height=250px>
 				</div>
 				<div class="right-column">
-					<b style="font-size:30px">${prod.prodName}</b>
-					<p style="font-size:30px" class="prod-ttl-price">Rs.${prod.prodTotalPrice}</p>
-					
+					<b style="font-size: 30px">${prod.prodName}</b>
+					<p style="font-size: 30px" class="prod-ttl-price">Rs.${prod.prodPrice}</p>
 				</div>
-        
 			</div>
 		</c:forEach>
 	</div>
-  <p class="cart-price">cart</p>
-        <a href="addToOrders" class="order-btn">order</a>	
+	<p class="cart-price">cart</p>
+	<a href="addToOrders" class="order-btn">order</a>
 </body>
 </html>

@@ -30,8 +30,6 @@ public class HomeController {
 	@Autowired
 	UserRepo userrepo;
 	@Autowired
-	CartRepo cartrepo;
-	@Autowired
 	OrdersRepo ordersrepo;
 	@Autowired
 	OrderDetailsRepo orderdetailsrepo;
@@ -79,21 +77,16 @@ public class HomeController {
 
 	@RequestMapping("addToCart")
 	public String addToCart(HttpSession session, Cart cart) {
-		Products product = productsrepo.findById(cart.getProdId()).orElse(null);
-		cart.setProdName(product.getProdName());
-		cart.setProdImgSrc(product.getProdImgSrc());
-		cart.setProdNos(1);
 		cart.setUserId(((User) session.getAttribute("user")).getUserId());
-		cart.setCartTotalPrice(product.getProdPrice());
-		cart.setProdTotalPrice(product.getProdPrice());
-		cartrepo.save(cart);
+		cart.setProduct(productsrepo.findById(cart.getProdId()).orElse(new Products()));
+		session.setAttribute("cart", cart);
 		return "redirect:/products";
 	}
 
 	@RequestMapping("cart")
-	public ModelAndView cart() {
-		List<Cart> cartlist = (List<Cart>) cartrepo.findAll();
-		mv.addObject("cart", cartlist);
+	public ModelAndView cart(HttpSession session) {
+		Cart cart = (Cart) session.getAttribute("cart");
+		mv.addObject("cart", cart.getProducts());
 		mv.setViewName("cart");
 		return mv;
 
@@ -115,10 +108,10 @@ public class HomeController {
 			Cart cart = cartlist.get(i);
 			orderdetails.setOrderId(orders.getOrderId());
 			orderdetails.setProdId(cart.getProdId());
-			orderdetails.setProdImgSrc(cart.getProdImgSrc());
-			orderdetails.setProdName(cart.getProdName());
-			orderdetails.setProdNos(cart.getProdNos());
-			orderdetails.setProdTotalPrice(cart.getProdTotalPrice());
+			//orderdetails.setProdImgSrc(cart.getProdImgSrc());
+			//orderdetails.setProdName(cart.getProdName());
+			//orderdetails.setProdNos(cart.getProdNos());
+			//orderdetails.setProdTotalPrice(cart.getProdTotalPrice());
 			orderdetailsrepo.save(orderdetails);
 			cartTotalPrice += cart.getProdTotalPrice();
 		}
