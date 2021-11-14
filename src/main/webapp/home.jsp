@@ -8,41 +8,6 @@
 	body{
 		background-color:azure;
 	}
-	nav{
-	flex: 1;
-	text-align: right;	
-}
-a{
-    text-decoration: none;
-}
-ul{
-    list-style: none;
-}
-
-a{
-	text-decoration: none;
-	color: black;
-	border-color: white;
-}
-.button ul{
-	display: inline-block;
-	list-style-type: none;
-}
-
-.button ul li{
-	margin-right: 20px;
-	background-color:azure;
-	justify-content: center;
-	align-items: center;
-	width:auto;
-	height: 40px;
-	padding: 0 25px ;
-	font-size:25px;
-	box-shadow: 2px 2px 30px rgba(0,0,0,0.1);
-	display: inline-flex;
-	margin-top:-8px;
-}
-
 	</style>
 <body>
 	
