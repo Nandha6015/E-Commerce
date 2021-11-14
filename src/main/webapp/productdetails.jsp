@@ -11,7 +11,21 @@
 
 </head>
 <style>
-	
+	.cart-btn {
+  display: inline-block;
+  background-color: white;
+  border-radius: 6px;
+  font-size: 20px;
+  color:red;
+  text-decoration: none;
+  padding: 12px 15px;
+  transition: all 0.5s;
+}
+.cart-btn:hover {
+  background-color:rgb(230, 223, 223);
+}
+
+
 nav{
 	flex: 1;
 	text-align: right;	
@@ -40,6 +54,7 @@ a{
 	align-items: center;
 	width:auto;
 	height: 40px;
+  padding: 0 25px ;
   padding: 0 25px ;
 	font-size:25px;
 	box-shadow: 2px 2px 30px rgba(0,0,0,0.1);
@@ -158,30 +173,25 @@ a{
 	<nav class="button">
 		<img style="float: left" src="18.png" width="200px" height="50px" />
 		<ul>
-			<li><a href="products" class="head">Product</a></li>
-			<li class="current"><a href="cart" class="head">Cart</a></li>
+			<li class="current"><a href="products" class="head">Product</a></li>
+			<li><a href="cart" class="head">Cart</a></li>
 			<li><a href="orders" class="head">Orders</a></li>
 			<li><a href="profile" class="head">${user.userName}</a></li>
 			<li><a href="index.jsp" class="head">Logout</a></li>
 		</ul>
 	</nav>
 	<div class="container">
-		<c:forEach items="${cart}" var="prod">
 			<div class="main">
 				<div class="left-column">
-					<img src="${prod.prodImgSrc}.png" alt="${prod.prodName}" width=auto height=250 px>
+					<img src="${products.prodImgSrc}.png" alt="${products.prodName}" width=auto height=250 px>
 				</div>
 				<div class="right-column">
-					<b style="font-size:30px">${prod.prodName}</b>
-					<p style="font-size:30px" class="prod-ttl-price">Rs.${prod.prodTotalPrice}</p>
-					
-				</div>
-        
+					<b style="font-size:30px">${products.prodName}</b>
+					<p style="font-size:30px" class="prod-ttl-price">${products.prodDesc}</p>
+					<a href="addToCart?prodId=${products.prodId}" class="cart-btn">Add to cart</a>
+		            <a href="addToBuy?prodId=${products.prodId}" class="order-btn">Buy now</a>
+				</div>			
 			</div>
-    
-		</c:forEach>
-	</div>
-  <p class="cart-price">cart</p>
-        <a href="addToOrders" class="order-btn">order</a>	
+	</div>	
 </body>
 </html>

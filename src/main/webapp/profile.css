@@ -1,10 +1,10 @@
 table {
-  background-color: lightgrey;
-  border: 5px solid black;
+  background-color: white;
+  border: 1px solid azure;
   box-shadow: 1px lightgrey;
   border-radius: 20px;
   width: 500px;
-  height: 400px;
+  height: 300px;
   padding: 30px;
   margin-left: 350px;
   margin-top: 80px;
