@@ -1,6 +1,15 @@
 
 
-We Done in Restful API So the Repository Links are below
+Done in Restful API So the Repository Links are below (As File Size is large, unable to upload as a file here so provided as link of repositoeries)
 
   iStore-FrontEnd link   -  https://github.com/Nandha6015/iStore-FrontEnd.git
   iStore-BackEnd link    - https://github.com/Nandha6015/iStore-BackEnd.git
+
+
+TODO:
+  
+  1.Clone the both repositories - front end in vs code and backend in eclipse 
+  2.Run MySql at port 3306
+  3.Create database named as - istore
+  3.Add the products (sql queries are provided)
+  4.Run both front and backends 
